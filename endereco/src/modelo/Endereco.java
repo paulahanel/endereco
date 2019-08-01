@@ -10,9 +10,11 @@ package modelo;
  * @author Administrador
  */
 public class Endereco {
+
     private String bairro;
     private String logradouro;
     private String complemento;
+    private Integer codigo;
 
     public String getBairro() {
         return bairro;
@@ -42,6 +44,15 @@ public class Endereco {
     public String toString() {
         return "Endereco{" + "logradouro=" + logradouro + '}';
     }
-    
-    
+
+    public Integer getCodigo() {
+
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        System.out.println("yteste:" + codigo);
+        this.codigo = codigo;
+    }
+
 }

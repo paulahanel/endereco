@@ -29,5 +29,31 @@ public class ControladorEndereco {
             JOptionPane.showMessageDialog(null, "Erro!");
         }
 }
+    public static void alterar(ManutencaoEndereco man){
+        Endereco objeto = new Endereco();
+        //definir todos os atributos
+        objeto.setCodigo(Integer.parseInt(man.jtfCodigo.getText()));
+        objeto.setBairro(man.jtfBairro.getText());
+        objeto.setLogradouro(man.jtfLogradouro.getText());
+        objeto.setComplemento(man.jtfComplemento.getText());
+        
+        boolean resultado = EnderecoDao.alterar(objeto);
+        if (resultado) {
+            JOptionPane.showMessageDialog(null, "Alterado com sucesso!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Erro!");
+        }
+    }
     
+    public static void excluir(ManutencaoEndereco man){
+        Endereco objeto = new Endereco();
+        objeto.setCodigo(Integer.parseInt(man.jtfCodigo.getText())); //só precisa definir a chave primeira
+        
+        boolean resultado = EnderecoDao.excluir(objeto);
+        if (resultado) {
+            JOptionPane.showMessageDialog(null, "Excluído com sucesso!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Erro!");
+        }
+    }
 }
